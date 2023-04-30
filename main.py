@@ -30,8 +30,9 @@ def main():
     api.add_resource(resourses.tasks_restful.TasksUserListResource, '/api/task/user/<int:user_id>')
     api.add_resource(resourses.tasks_restful.TaskResource, '/api/task/<int:task_id>')
 
-    api.add_resource(resourses.users_restful.UserResource, '/api/user/<user_id>')
-    api.add_resource(resourses.users_restful.UsersAllListResource, 'api/user/all')
+    api.add_resource(resourses.users_restful.UserResource, '/api/user/<int:user_id>')
+    api.add_resource(resourses.users_restful.UsersAllListResource, '/api/user/all')
+    api.add_resource(resourses.users_restful.UserIdForTelegramResource, '/api/user/telegram/<int:telegram_id>')
 
     app.run(port=PORT, host=HOST, debug=True)
 
